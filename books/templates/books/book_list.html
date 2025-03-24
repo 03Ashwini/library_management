@@ -1,0 +1,15 @@
+{% extends 'books/base.html' %}
+{% block title %}Book List{% endblock %}
+{% block content %}
+<h2 class="mb-3">Book List</h2>
+<a href="{% url 'add_book' %}" class="btn btn-success mb-3">Add New Book</a>
+<ul class="list-group">
+    {% for book in books %}
+    <li class="list-group-item">
+        {{ book.title }} by {{ book.author }}
+        <a href="{% url 'update_book' book.pk %}" class="btn btn-primary btn-sm">Edit</a>
+        <a href="{% url 'delete_book' book.pk %}" class="btn btn-danger btn-sm">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

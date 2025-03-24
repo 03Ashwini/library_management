@@ -1,0 +1,17 @@
+{% extends 'books/base.html' %}
+{% block title %}Book Details{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-info text-white">
+            <h2 class="mb-0">{{ book.title }}</h2>
+        </div>
+        <div class="card-body">
+            <p class="lead"><strong>Author:</strong> {{ book.author }}</p>
+            <p><strong>Description:</strong> {{ book.description }}</p>
+            <a href="{% url 'view_books' %}" class="btn btn-secondary mt-3">⬅️ Back to Book List</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
